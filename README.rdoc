@@ -1,0 +1,23 @@
+= Rubis
+
+API for redis-backed ruby objects
+
+== Usage
+
+   Rubis.redis = 'localhost:6379'
+   module Foo
+     class Bar
+       extend Rubis::Namespace
+     end
+   end
+   
+   Foo::Bar.rpush('key', 'value')
+   # => redis.rpush('foo:bar:key', 'value')
+
+== TODO
+
+* API for persistent objects
+
+== Author
+
+Ryan Carmelo Briones <ryan.briones@brionesandco.com>
