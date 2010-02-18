@@ -2,6 +2,12 @@
 
 API for redis-backed ruby objects
 
+Blog post about the concept at http://bit.ly/b2s0ah
+
+== Installation
+
+  gem install rubis
+
 == Usage
 
    Rubis.redis = 'localhost:6379'
