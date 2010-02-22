@@ -1,8 +1,10 @@
+$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/lib')
 require 'rubygems'
 require 'rake/gempackagetask'
 
-require File.expand_path(File.dirname(__FILE__) + '/lib/rubis')
- 
+require 'rubis' 
+require 'rubis/tasks/get_redis_commands'
+
 spec = Gem::Specification.new do |s|
   s.name = 'rubis'
   s.version = Rubis::VERSION
@@ -13,7 +15,8 @@ spec = Gem::Specification.new do |s|
   s.author = 'Ryan Carmelo Briones'
   s.email = 'ryan.briones@brionesandco.com'
 
-  s.add_dependency 'redis-rb', '> 0.0.0'
+  s.add_dependency 'redis'
+  s.add_development_dependency 'nokogiri'
 end
  
 package_task = Rake::GemPackageTask.new(spec) {}
